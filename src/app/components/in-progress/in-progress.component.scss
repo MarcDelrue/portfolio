@@ -1,0 +1,23 @@
+$terminal-background: #000;
+$terminal-text: #DFDFDF;
+$terminal-tilde: #6ad30b;
+$terminal-error: #ac0a0a;
+
+.terminal-container {
+  background: $terminal-background;
+  color: $terminal-text;
+}
+
+.tilde {
+  color: $terminal-tilde;
+}
+
+.prompt-indicator {
+  height: 20px;
+  width: 1px;
+  background: $terminal-text;
+}
+
+.errorInLabel {
+  color: $terminal-error;
+}

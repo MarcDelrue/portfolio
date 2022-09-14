@@ -1,0 +1,13 @@
+<div class="terminal-container p-4 m-2 rounded-lg">
+   <ng-container *ngFor="let loaded of  loadedText; let isLast = last; let  i = index;">
+      <div class="flex">
+         <p>
+            <b class="tilde">~ </b>
+            <span [innerHTML]="loaded"></span>
+            <span *ngIf="step === 3 && i === 2" [innerHTML]="linkedIn"></span>
+         </p>
+         <div *ngIf="showPromptIndicator && isLast && (i === 0 || i % 2 === 0)" class="prompt-indicator">
+         </div>
+      </div>
+   </ng-container>
+</div>
