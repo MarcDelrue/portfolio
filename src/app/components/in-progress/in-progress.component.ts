@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-in-progress",
@@ -8,16 +9,19 @@ import { Component, OnInit } from "@angular/core";
 export class InProgressComponent implements OnInit {
   step: number = 0;
   finalText: string[] = [
-    `Website currently in progress ... 👨‍💻`,
-    "zsh: command not found: Website",
-    `You can still check my `,
+    this.translate.instant("IN_PROGRESS.FIRST_LINE"),
+    this.translate.instant("IN_PROGRESS.SECOND_LINE"),
+    this.translate.instant("IN_PROGRESS.THIRD_LINE"),
   ];
-  linkedIn = `<u><a href="https://www.linkedin.com/in/marc-delrue">LinkedIn</a></u>`;
+  linkedIn =
+    `<u><a href="https://www.linkedin.com/in/marc-delrue">` +
+    this.translate.instant("IN_PROGRESS.LINKEDIN") +
+    `</a></u> 🌐`;
   loadedText: string[] = [];
   showPromptIndicator: boolean = true;
   interval: number | undefined;
 
-  constructor() {}
+  constructor(private translate: TranslateService) {}
 
   async ngOnInit(): Promise<void> {
     await this.generateFinalText();
