@@ -12,6 +12,7 @@ import {
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
+import { CharacterSceneComponent } from "./components/character-scene/character-scene.component";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -31,7 +32,7 @@ function appInitializerFactory(translate: TranslateService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, InProgressComponent],
+  declarations: [AppComponent, InProgressComponent, CharacterSceneComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
