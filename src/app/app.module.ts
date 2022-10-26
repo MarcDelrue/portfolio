@@ -12,7 +12,7 @@ import {
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
-import { CharacterSceneComponent } from "./components/character-scene/character-scene.component";
+import { ThreeModule } from "./three/three.module";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -32,7 +32,7 @@ function appInitializerFactory(translate: TranslateService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, InProgressComponent, CharacterSceneComponent],
+  declarations: [AppComponent, InProgressComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -44,6 +44,7 @@ function appInitializerFactory(translate: TranslateService) {
         deps: [HttpClient],
       },
     }),
+    ThreeModule,
   ],
   providers: [
     {
@@ -54,5 +55,6 @@ function appInitializerFactory(translate: TranslateService) {
     },
   ],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}
