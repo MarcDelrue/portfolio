@@ -12,6 +12,8 @@ import {
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
+import { MainPageComponent } from "./components/main-page/main-page.component";
+import { LangSwapComponent } from "./components/lang-swap/lang-swap.component";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -31,7 +33,12 @@ function appInitializerFactory(translate: TranslateService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, InProgressComponent],
+  declarations: [
+    AppComponent,
+    InProgressComponent,
+    MainPageComponent,
+    LangSwapComponent,
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,

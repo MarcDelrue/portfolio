@@ -4,5 +4,9 @@
 		"SECOND_LINE": "zsh : commande non trouvée : Site",
 		"THIRD_LINE": "Vous pouvez toujours consulter mon ",
 		"LINKEDIN": "LinkedIn"
+	},
+	"MAIN": {
+		"HEADER_1": "Salut, moi c'est Marc",
+		"HEADER_2": "Un dévelopeur Front-end"
 	}
 }
