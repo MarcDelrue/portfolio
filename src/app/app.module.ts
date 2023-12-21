@@ -12,6 +12,7 @@ import {
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
+import { ThreeModule } from "./three/three.module";
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -43,6 +44,7 @@ function appInitializerFactory(translate: TranslateService) {
         deps: [HttpClient],
       },
     }),
+    ThreeModule,
   ],
   providers: [
     {
@@ -53,5 +55,6 @@ function appInitializerFactory(translate: TranslateService) {
     },
   ],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}
